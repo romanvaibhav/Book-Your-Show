@@ -1,0 +1,20 @@
+
+<div>
+    <div>
+        <div *ngFor="let ele of user">
+            <div class="styleMovie"  [ngStyle]="{'background-image': 'url(' + ele.image + ')',  'background-size': '700px 100%',
+            'background-position': '600px ',
+            'background-repeat': 'no-repeat',
+            'margin-right':'90px'
+            }">
+                <img style="z-index: 1; width: 220px; height: 340px;object-fit: cover;  border-radius: 10px;margin-top: 50px; margin-left: 80px;" [src]="ele.image" alt="">
+                <div>
+                    <h2 class="name">{{ele.name}}</h2>
+                    <button class="bookBtn" (click)="onHallName(ele._id,ele.cityId)">Book Tickets</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

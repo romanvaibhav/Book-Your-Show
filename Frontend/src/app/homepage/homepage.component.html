@@ -1,0 +1,44 @@
+<!-- @if(user){ -->
+
+<div>
+
+    <div style="width: 100%; height: 10vh;background-color: rgb(227, 233, 238); display: flex; ">
+        <div>
+            
+            <input style="width: 300px; height: 30px; margin-left: 20px; margin-top: 10px;" [(ngModel)]="filteringmovie" (input)="filterMovies()" type="text" placeholder="Search for Movies">
+            <ul *ngIf="isDropdownVisible" class="suggestions">
+                    <li *ngFor="let ele of filteredmovies" (click)="goTotheMovie(ele._id)" >
+                        {{ ele.name }}
+                    </li>
+            </ul>        
+        </div>
+        <div style="margin-right: 30px;width: 100%; margin-top: 20px; display: flex; justify-content: flex-end; ">
+            <div style="margin-top: -10px;">
+                <input style="border: 1px solid black; height: 32px;" type="text" [(ngModel)]="searchTerm" (input)="filterCities()" placeholder="Search for a city..."
+                    class="form-control" />
+                <ul *ngIf="isCityVisible" class="suggestions">
+                  
+                    <li *ngFor="let ele of filteredCities" (click)="selectCity(ele.city,ele._id)">
+                        {{ ele.city }}
+                    </li>
+                    <li *ngIf="isCityNew" (click)="AddNewCity(searchTerm)">
+                        Add "{{ searchTerm }}" as a new city
+                      </li>
+                </ul>
+            </div>
+            <!-- < -->
+        </div>
+    </div>
+
+</div>
+
+<div style=" width: 100%; height: auto; display: flex; flex-wrap: wrap; flex-direction: row;">
+    <div style="margin-left: 50px; flex: 0 1 20%;" *ngFor="let entry of user">
+        <div>
+            <img (click)="onImageClick(entry._id)"
+                style="width: 200px; height: 300px;  object-fit: cover; margin-left: 30px; border-radius: 5px; margin-top: 15px;"
+                [src]="entry.image" alt="">
+            <p style="margin-left: 100px; font-weight: bold; font-size: 17px;">{{entry.name}}</p>
+        </div>
+    </div>
+</div>

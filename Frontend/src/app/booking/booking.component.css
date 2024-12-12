@@ -1,0 +1,15 @@
+.available-seat {
+    color: green;
+    border: 1px solid green;
+    background-color: white;
+}
+
+.booked-seat {
+    background-color: red;
+    opacity: 0.5;  /* Make it appear faded */
+    pointer-events: none;
+    color: black;
+}
+.selected-seat {
+    background-color: lightgreen; /* Change background color when selected */
+  }

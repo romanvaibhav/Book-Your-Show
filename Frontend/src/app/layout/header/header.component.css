@@ -1,0 +1,185 @@
+
+.navbar {
+    width: 100%;
+    /* height: 15vh; */
+    display: flex;
+    align-items: center;
+    background-color: hsl(0, 2%, 10%);
+    color: white;
+    /* position: relative; */
+    /* z-index: 500; */
+}
+.mainNav{
+    width: 100%;
+    /* border: 2px solid black; */
+    border-bottom: 1px solid hsl(0, 1%, 26%);
+}
+.parent{
+    width: 100%;
+    height: 100%;
+}
+
+.heading {
+    margin-left: 60px;
+}
+
+.heading a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#headingName {
+    color: #486d92;
+}
+
+.Horbar {
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 15px; */
+    align-items: center;
+    /* background-color: red; */
+    /* justify-content: space-between; */
+}
+
+.Horbar a {
+    align-content: center;
+    padding-left: 13px;
+    color: #fdfbfb;
+    /* padding-left: 60px; */
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    width: 70px;
+    height: 50px;
+    /* margin-left: 30px; */
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+}
+.Horbar a:hover{
+    color: #000000;
+    background-color:hsl(0, 0%, 80%) ;
+}
+
+.profile {
+    /* margin-left: auto; */
+    /* margin-left: 100; */
+    /* margin-right: -600%; */
+    /* border: 1px solid black; */
+    /* padding: 0px 2px; */
+    cursor: pointer;
+    height: 30px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: hsl(224, 82%, 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .profile p{
+    margin: 0 auto 0 auto;
+    padding: 2px 2px;
+    font-size: 15px;
+    color: white;
+} */
+.profile:hover {
+    background-color: hsl(224, 82%, 50%);
+}
+
+#btn {
+    /* margin-left: 80px; */
+    margin-left: 40%;
+}
+
+.navBtn {
+    display: flex;
+    align-items: center;
+    margin-right: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+/* SideBAr */
+.leftside{
+    display: flex;
+    width: 250px;
+    height: 100%;
+    transition: all 4s ease;    /* align-content: center; */
+
+}
+.sidebar {
+    background-color: #000;
+    width: 250px;
+    height: 100vh;
+    align-content: flex-end;
+    position: fixed;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    transition: all 4s ease;    /* align-content: center; */
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+.sideimg{
+    display: flex;
+    justify-content: center;
+    margin-top: -160px;
+}
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: #f3eded;
+    text-decoration: none;
+    /* border-bottom: 1px solid #fff; */
+}
+.sidebar a:hover {
+    background-color: #fff;
+    color: #000;
+}
+.sidebar .copyright {
+
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+.sidebar .copyright a {
+    color: #fff;
+    text-decoration: none;
+}
+.leftside{
+    display: flex;
+    justify-content: flex-end;
+}
+.cloud{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    width: 50%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #4CAF50;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+.openprofile{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
