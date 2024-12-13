@@ -37,7 +37,7 @@
         style="background: linear-gradient(45deg, hsl(300, 3%, 72%), rgb(245, 236, 232));">
         <div class="modal-header"
             style="background:  linear-gradient(45deg, hsl(300, 3%, 72%), rgb(245, 236, 232));">
-            <h5 class="modal-title" id="exampleModalLabel">Update Company Information
+            <h5 class="modal-title" id="exampleModalLabel">Show Creation
 
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal">
@@ -72,7 +72,7 @@
                     </div>
                     <div>
                         <label for="TotalSeats">Seats Per Row</label>
-                        <input (change)="onChange($event)" [(ngModel)]="seatsPerRow" type="number">
+                        <input (change)="onChange($event)" [(ngModel)]="showcreation.rowSeats" type="number">
                     </div>
                     <div>
                         <label for="TotalSeats">Price</label>

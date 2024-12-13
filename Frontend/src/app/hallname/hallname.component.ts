@@ -122,8 +122,10 @@ export class HallnameComponent {
     movieId: this.movieId,
     cityId: this.cityId,
     totalSeats: this.tSeats,
+    rowSeats:this.seatsPerRow,
   }
   createShow() {
+    console.log("Seats Per Row Should Be",this.seatsPerRow);
     this.authService.postShowCreation(this.showcreation).subscribe({next:(value:any)=>{
       console.log("Show Created Succesfully",value);
       this.AllSlot();
@@ -145,10 +147,10 @@ export class HallnameComponent {
   // Genarating Seats and Pushing in array 
   onChange(event: any) {
     this.showcreation.seatsAvailable = [];  
-    if (this.selectedRow && this.seatsPerRow) {
+    if (this.selectedRow && this.showcreation.rowSeats) {
       for (let i = 1; i <=this.selectedRow; i++) {
         const rowNo = String.fromCharCode(64 + i);
-        for (let j = 1; j <=this.seatsPerRow; j++) {
+        for (let j = 1; j <=this.showcreation.rowSeats; j++) {
           this.showcreation.seatsAvailable.push({ row: rowNo+j, seatNumber: j, isBooked: false, price: this.seatPrice });
         }
       }

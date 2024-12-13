@@ -53,6 +53,10 @@ const slotSchema = new mongoose.Schema({
   totalSeats:{
     type:Number,
     required:true
+  },
+  rowSeats:{
+    type:Number,
+    required:true,
   }
 });
 

@@ -67,7 +67,7 @@ async function handleGenerateHall(req,res){
 
 
 async function handleGenerateSlot(req,res){
-    const {hallId, time, seatsAvailable, date, movieId, cityId,totalSeats}=req.body;
+    const {hallId, time, seatsAvailable, date, movieId, cityId,totalSeats,rowSeats}=req.body;
     const slotN= new Slot({
         hallId,
         time, 
@@ -75,8 +75,8 @@ async function handleGenerateSlot(req,res){
         date, 
         movieId, 
         cityId,
-        totalSeats
-
+        totalSeats,
+        rowSeats
     });
     try{
         const saveSlot=await slotN.save();

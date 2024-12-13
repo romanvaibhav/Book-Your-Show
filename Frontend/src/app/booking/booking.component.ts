@@ -28,7 +28,7 @@ export class BookingComponent {
       next: (value: any) => {
         console.log("Here We got the details of the hall", value);
         this.bookingList = value;
-        console.log("This os BookingList Value", this.bookingList)
+        console.log("This os BookingList Value and we pass it", this.bookingList)
 
       },
       error: (err: any) => {

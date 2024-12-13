@@ -1,20 +1,23 @@
+<div
+    style="width: 100%; height: 86vh; border: 1px solid black; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgb(223, 216, 216);">
+    <p style="margin-bottom: -3px; font-size: 14px; color: rgb(107, 104, 104);">All eyes this way</p>
+    <div
+        style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; width: 200px; height: 10px; border:1px solid black; margin-bottom: 30px;">
 
-
-    <div style="width: 100%; height: 86vh; border: 1px solid black; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgb(223, 216, 216);">
-            <p style="margin-bottom: -3px; font-size: 14px; color: rgb(107, 104, 104);">All eyes this way</p>
-            <div style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; width: 200px; height: 10px; border:1px solid black; margin-bottom: 30px;">
-
-            </div>
-            <div style="width: auto; height: auto; margin-bottom: 130px;" >
-                <div *ngFor="let time of bookingList" 
-                     style="display: grid; 
-                            grid-template-columns: repeat(8, 1fr); /* 5 seats per row */
-                            gap:3px 10px;
-                            justify-items: center; /* Center seats horizontally */
-                            height: auto; 
-                            ">
-                    <button #seatButton *ngFor="let seat of time.seatsAvailable" [ngClass]="seat.isBooked ? 'booked-seat' : 'available-seat'"
-                         style=" 
+    </div>
+    <div style="width: auto; height: auto; margin-bottom: 130px;">
+        <div *ngFor="let time of bookingList" 
+        [ngStyle]="{ 
+          'display': 'grid', 
+          'grid-template-columns': 'repeat(' + time.rowSeats + ', 1fr)', 
+          'gap': '3px 10px', 
+          'justify-items': 'center', 
+          'height': 'auto', 
+           }">
+            <!-- grid-template-columns: repeat(8, 1fr); 5 seats per row                         -->
+            <!-- <h1>{{time.rowSeats}}</h1> -->
+            <button #seatButton *ngFor="let seat of time.seatsAvailable"
+                [ngClass]="seat.isBooked ? 'booked-seat' : 'available-seat'" style=" 
                                 margin-left: 2px;
                                 width: 40px; 
                                 height: 30px; 
@@ -22,22 +25,21 @@
                                 flex-direction: column; 
                                 justify-content: center; 
                                 align-items: center;
-                                "  (click)="selectSeat(seat,seatButton)">
-                        {{ seat.row }}
+                                " (click)="selectSeat(seat,seatButton)">
+                {{ seat.row }}
             </button>
-        
-                </div>
-            </div>
-            <div style="margin-bottom: 30px;" >
-                Total Tickets : {{bookingSeat.length}}
-            </div>
-        
-            <div style="margin-top:20 px;" *ngFor="let time of bookingList">
-                <button (click)="generateTicket(time._id)" style="color: white; background-color: #ef233c; border: 1px solid black;  border-radius: 5px; width: 300px; height: 30px;">Pay Rs.{{totalPrice}}</button> 
-            </div>
-
-        <!-- </div> -->
-
+        </div>
+    </div>
+    <div style="margin-bottom: 30px;">
+        Total Tickets : {{bookingSeat.length}}
     </div>
 
+    <div style="margin-top:20 px;" *ngFor="let time of bookingList">
+        <button (click)="generateTicket(time._id)"
+            style="color: white; background-color: #ef233c; border: 1px solid black;  border-radius: 5px; width: 300px; height: 30px;">Pay
+            Rs.{{totalPrice}}</button>
+    </div>
 
+    <!-- </div> -->
+
+</div>
