@@ -177,6 +177,9 @@ export class HallnameComponent {
   }
 
 
+
+
+
 // Routing to the Booking Page
 
   GoToBooking(showId: string) {

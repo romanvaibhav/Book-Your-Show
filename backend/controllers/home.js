@@ -252,6 +252,17 @@ async function updateConfirmShow(req, res) {
 
     }
   }
+
+
+ async function handleDeleteShow(req,res){
+    try{
+        const {_id}=req.query;
+        const ele=await Slot.findOneAndDelete({_id:(new mongoose.Types.ObjectId(_id))})
+        res.status(200).json("Deleted Succesfully");
+    }catch{
+        res.status(500).json({message:"Getting Error While Deleting the Show"});
+    }
+ } 
   
 
 module.exports = {
@@ -268,6 +279,7 @@ module.exports = {
     handleGetAllSlot,
     getOneShow,
     updateConfirmShow,
-    handleGetDateSlot
+    handleGetDateSlot,
+    handleDeleteShow
 
 }

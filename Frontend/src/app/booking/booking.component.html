@@ -33,13 +33,11 @@
     <div style="margin-bottom: 30px;">
         Total Tickets : {{bookingSeat.length}}
     </div>
-
     <div style="margin-top:20 px;" *ngFor="let time of bookingList">
         <button (click)="generateTicket(time._id)"
-            style="color: white; background-color: #ef233c; border: 1px solid black;  border-radius: 5px; width: 300px; height: 30px;">Pay
+            style="margin-left: -160px; color: white; background-color: #ef233c; border: 1px solid black;  border-radius: 5px; width: 300px; height: 30px;">Pay
             Rs.{{totalPrice}}</button>
+            <button style="margin-right: -800px; margin-left: 220px; border: 1px solid black; background-color: white;" (click)="DeleteShow(time._id)">Delete Show</button>
     </div>
-
     <!-- </div> -->
-
 </div>

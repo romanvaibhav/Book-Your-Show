@@ -28,7 +28,8 @@ export class BookingComponent {
       next: (value: any) => {
         console.log("Here We got the details of the hall", value);
         this.bookingList = value;
-        console.log("This os BookingList Value and we pass it", this.bookingList)
+        console.log("This os BookingList Value and we pass it", this.bookingList.length)
+
 
       },
       error: (err: any) => {
@@ -84,6 +85,17 @@ export class BookingComponent {
     const arrayString = JSON.stringify(this.bookingSeat);  // or arrayData.join(',');
 
       this.router.navigateByUrl(`/finalbooking/${_id}?data=${encodeURIComponent(arrayString)}`)
+  }
+
+  DeleteShow(_id:string){
+    this.authService.deleteShow(_id).subscribe({next:(value:any)=>{
+      console.log("Show Deleted Succesfully",value); 
+      window.alert("Show Deleted Succesfully");
+    },
+    error:(err:any)=>{
+      console.log("We got error while Deleting Show",err);
+    }
+  })
   }
 
 }

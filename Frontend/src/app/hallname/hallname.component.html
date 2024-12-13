@@ -2,7 +2,7 @@
     <h1 class="movieName">{{ele.name}}</h1>
     <button style="margin-top: -20px; width: 100px; margin-left: 90%; font-size: 13px; border: 1px solid black; background-color: #ef233c; color: white; font-weight: bold;" class="updateInfo" type="button"  data-toggle="modal" data-target="#exampleModal" (click)="openmodel()">Create Show</button>
 </div>
-<div style="display: flex;   margin-top: 0px; width: 100%; height: 60px; border-top: 1px solid rgb(99, 93, 93); ">
+<div style="display: flex; margin-left: 20px;   margin-top: 0px; width: 100%; height: 60px; border-top: 1px solid rgb(99, 93, 93); ">
     <div class="Dates" *ngFor="let time of uniqueDates; let i = index" style="display: flex; width:110px; height: 10px; margin-top: 20px; ">
         <div>
             <button  [ngClass]="{'selected': selectedButtonIndex === i }" class="datebt" (click)="selectDate(time,i)" >{{time}}</button>
@@ -32,12 +32,12 @@
 <!-- Modal   + user._id-->
 <div class="modal fade" #exampleModal tabindex="-1" role="dialog" [attr.data-bs-target]="'#exampleModal'" aria-hidden="true">
 <div class="modal-dialog" role="document"
-    style="width: 36%; background: linear-gradient(45deg, hsl(300, 3%, 72%), rgb(245, 236, 232));">
+    style="width: 36%; background: #ef233c">
     <div class="modal-content"
-        style="background: linear-gradient(45deg, hsl(300, 3%, 72%), rgb(245, 236, 232));">
+        style="background: #ef233c">
         <div class="modal-header"
-            style="background:  linear-gradient(45deg, hsl(300, 3%, 72%), rgb(245, 236, 232));">
-            <h5 class="modal-title" id="exampleModalLabel">Show Creation
+            style="background: #ef233c">
+            <h5 class="modal-title" id="exampleModalLabel" style="color: white;">Show Creation
 
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal">
@@ -48,46 +48,46 @@
             <div class="content ">
                 <div style="margin-left: 10px;" class="d-flex flex-column" >
                     <div>
-                        <label for="TotalPage">Theater</label>
+                        <label for="TotalPage">Theater:</label>
                         <!-- [(ngModel)]="productList.page" -->
-                        <select name="TotalPage"  [(ngModel)]="showcreation.hallId">
+                        <select style="margin-left: 50px; width: 214px; height: 30px; margin-bottom: 2px;" name="TotalPage"  [(ngModel)]="showcreation.hallId">
                             <option *ngFor="let num of hallList" [value]="num._id">{{num.name}}</option>
                         </select>
                     </div>
                     <div>
-                        <label for="Time">Time</label>
-                        <input [(ngModel)]="showcreation.time" type="text">
+                        <label for="Time">Time:</label>
+                        <input style="margin-left: 70px; margin-bottom: 2px;" [(ngModel)]="showcreation.time" type="text">
                     </div>
                     <div>
-                        <label for="Time">Date</label>
-                        <input [(ngModel)]="showcreation.date" type="date">
+                        <label for="Time">Date:</label>
+                        <input style="margin-left: 70px; width: 214px; height: 30px; margin-bottom: 2px;" [(ngModel)]="showcreation.date" type="date">
                     </div>
                     <div>
-                        <label for="TotalSeats">Total Seats</label>
-                        <input [(ngModel)]="showcreation.totalSeats" type="number">
+                        <label for="TotalSeats">Total Seats:</label>
+                        <input style="margin-left: 27px;" [(ngModel)]="showcreation.totalSeats" type="number">
                     </div>
                     <div>
-                        <label for="TotalSeats">Seleted Row</label>
-                        <input (change)="onChange($event)" [(ngModel)]="selectedRow" type="number">
+                        <label for="TotalSeats">Select Rows:</label>
+                        <input style="margin-left: 20px; margin-bottom: 2px;" (change)="onChange($event)" [(ngModel)]="selectedRow" type="number">
                     </div>
                     <div>
-                        <label for="TotalSeats">Seats Per Row</label>
-                        <input (change)="onChange($event)" [(ngModel)]="showcreation.rowSeats" type="number">
+                        <label for="TotalSeats">Seats Per Row:</label>
+                        <input style="margin-left: 4px; margin-bottom: 2px;" (change)="onChange($event)" [(ngModel)]="showcreation.rowSeats" type="number">
                     </div>
                     <div>
-                        <label for="TotalSeats">Price</label>
-                        <input (change)="onChange($event)" [(ngModel)]="seatPrice" type="number">
+                        <label for="TotalSeats">Price:</label>
+                        <input style="margin-left: 70px; margin-bottom: 2px;" (change)="onChange($event)" [(ngModel)]="seatPrice" type="number">
                     </div>
                 </div>
                 <button
-                    style="width:70px; height:25px; margin-left: 80%; margin-top: 20%; border: none; border-radius: 5px; "
+                    style="width:70px; height:25px; margin-left: 80%; margin-top: 20%; border: none; border-radius: 5px; color: white; background-color: #ef233c; "
                      data-bs-dismiss="modal"
                     onmouseover="this.style.backgroundColor='hsl(300, 1%, 60%)'" (click)="createShow()">submit</button>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                aria-label="Close">Close</button>
+                aria-label="Close" style="color: black; background-color: white;">Close</button>
         </div>
     </div>
 </div>

@@ -36,6 +36,8 @@ export class FinalBookingComponent {
       console.log(this.Email,this.Phone);
       this.authService.patchSeats(this._id,this.bookingSeat).subscribe({next:(value:any)=>{
         console.log("Seats Updates Succesfully",value)
+        window.alert("Show Deleted Succesfully");
+
       },
       error:(err:any)=>{
         console.log("Here We Are getting error while updating seat status");

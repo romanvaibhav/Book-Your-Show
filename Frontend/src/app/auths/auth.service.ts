@@ -109,9 +109,20 @@ export class AuthService {
   }
 
 
+
+  //Deleting Shows
+  deleteShow(_id:string):Observable<object>{
+    let params=new HttpParams;
+    if(_id){
+      params=params.set("_id",_id);
+    }
+    return this.httpClient.delete(`http://localhost:3002/user/city/show/delete`,{ params })
+
+  }
+
+
 }
 
 
 
-//Getting SLots in the city
 
